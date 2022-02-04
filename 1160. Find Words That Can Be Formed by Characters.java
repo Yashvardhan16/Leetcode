@@ -1,17 +1,24 @@
 class Solution {
     public int countCharacters(String[] words, String chars) {
-           int[] charsArray = new int[26];
-        for (char c : chars.toCharArray()) charsArray[c - 'a']++;
-        int sum = 0;
-        MAIN_LOOP:
-        for (String word : words) {
-            int[] wordArray = new int[26];
-            for (char c : word.toCharArray()) wordArray[c - 'a']++;
-            for (int i = 0; i < 26; i++) 
-                if (wordArray[i] > 0 && charsArray[i] < wordArray[i]) continue MAIN_LOOP;
-            sum += word.length();
+        int[] ans = new int[26];
+        for(char c:chars.toCharArray()){
+            ans[c-'a']++;
         }
-        return sum;
-        
+        int count=0;
+        for(String word:words){
+            int[] temp = Arrays.copyOf(ans,ans.length);
+            int valid =0;
+            
+            for(char c:word.toCharArray()){
+                if(temp[c-'a']>0){
+                    valid++;
+                    temp[c-'a']--;
+                }
+            }
+            if(valid==word.length()){
+                count += word.length();
+            }
+        }
+        return count;
     }
 }
