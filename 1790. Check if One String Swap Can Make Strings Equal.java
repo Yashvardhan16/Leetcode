@@ -1,21 +1,18 @@
 class Solution {
     public boolean areAlmostEqual(String s1, String s2) {
-  if(s2.equals(s1)) return true;
-        
-        if(s1.length()!=s2.length()) return false;
-        
-      int[] s1Array = new int[26];
-      int[] s2Array = new int[26];
-      int counter = 0;
-      for(int i = 0;i<s1.length();i++){
-         char s = s1.charAt(i);
-         char ss = s2.charAt(i);
-         if(s != ss)
-            counter++;
-         if(counter > 2)
-            return false;
-          s1Array[s -'a']++;
-         s2Array[ss -'a']++;
-      }
-      return Arrays.equals(s1Array, s2Array);
-    }}
+        int[] ans1 = new int[26];
+        int[] ans2 = new int[26];
+        int count =0;
+        for(int i=0;i<s2.length();i++){
+            if(s1.charAt(i)!=s2.charAt(i)){
+                count++;
+            }
+            if(count>2){
+                return false;
+            }
+            ans1[s1.charAt(i)-'a']++;
+            ans2[s2.charAt(i)-'a']++;
+        }
+        return Arrays.equals(ans1,ans2);
+    }
+}
