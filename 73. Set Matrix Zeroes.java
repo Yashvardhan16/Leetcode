@@ -1,4 +1,4 @@
-//Space Complexity O(mn)
+//Space Complexity O(m+n)
 
 class Solution {
     public void setZeroes(int[][] matrix) {
