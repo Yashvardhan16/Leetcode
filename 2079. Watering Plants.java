@@ -1,17 +1,17 @@
 class Solution {
     public int wateringPlants(int[] plants, int capacity) {
         int steps = 0;
-        int availableWater = capacity;              
-        for (int i = 0; i < plants.length; i++) {    
-            if (availableWater >= plants[i]) {      
-                availableWater -= plants[i];         
-                steps++;                             
-            } else {                                 
-                steps += i;                         
-                availableWater = capacity;           
-                steps += i;
-                availableWater -= plants[i];         
-                steps++;                             
+        int n = plants.length;
+        int current =capacity;
+        for(int i=0;i<n;i++){
+            if(current>=plants[i]){
+             current -=plants[i];
+            steps +=1;
+            }
+            else if(current<plants[i]){
+                current = capacity;
+                steps += 2*i+1;
+                current -= plants[i];
             }
         }
         return steps;
