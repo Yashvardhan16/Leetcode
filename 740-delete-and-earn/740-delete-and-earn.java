@@ -1,19 +1,19 @@
 class Solution {
     public int deleteAndEarn(int[] nums) {
         int n = nums.length;
-      Map<Integer,Integer> map = new HashMap<>();
-        int max=0;
-        for(int i : nums){
-            map.put(i,map.getOrDefault(i,0)+i);
-            max = Math.max(max,i);
+        int[] count = new int[10001];
+        for(int i:nums){
+            count[i]++;
         }
-        int[] dp = new int[max+1];
-        dp[1] = map.getOrDefault(1,0);
+        int include=0;
+        int exclude =0;
         
-        for(int i=2;i<dp.length;i++){
-            int gain = map.getOrDefault(i,0);
-            dp[i] = Math.max(dp[i-1],dp[i-2]+gain);
+        for(int i=0;i<count.length;i++){
+            int ni = exclude+count[i]*i;
+            int ne= Math.max(include,exclude);
+            
+            include = ni;exclude=ne;
         }
-        return dp[max];
+        return Math.max(include,exclude);
     }
 }
