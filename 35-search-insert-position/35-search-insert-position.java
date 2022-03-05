@@ -6,16 +6,16 @@ class Solution {
         
         while(lo<=hi){
             int mid = lo+(hi-lo)/2;
-            
-            if(nums[mid]==target){
+             if(nums[mid]<target){
+                lo=mid+1;
+             }
+          else if(nums[mid]>target){
+                hi = mid-1;
+            }
+            else{
                 return mid;
             }
-            else if(nums[mid]<target){
-                lo++;
-            }else{
-                hi--;
-            }
         }
-        return lo;
+        return hi+1;
     }
 }
