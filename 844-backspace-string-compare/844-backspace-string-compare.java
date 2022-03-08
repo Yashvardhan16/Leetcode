@@ -5,13 +5,13 @@ class Solution {
         
     }
     public String helper(String s){
-         Stack<Character> ans = new Stack();
+         StringBuilder sb = new StringBuilder();
         for (char c: s.toCharArray()) {
             if (c != '#')
-                ans.push(c);
-            else if (!ans.empty())
-                ans.pop();
+                sb.append(c);
+            else if (sb.length()!=0)
+                sb.deleteCharAt(sb.length()-1);
         }
-         return String.valueOf(ans);
+         return sb.toString();
     }
 }
