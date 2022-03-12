@@ -8,11 +8,11 @@ class Solution {
         int k = nums.length-1;
             while(j<k){
         int sum = nums[i] + nums[j] + nums[k];
-                if(sum>target){
-                    k--;
+                if(sum<target){
+                    j++;
                 }
                 else {
-                    j++;
+                    k--;
                 }
     
             if(Math.abs(sum-target)<Math.abs(initial_sum-target)){
