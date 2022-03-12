@@ -9,9 +9,7 @@ class Solution {
             while(j<k){
             int sum = nums[j]+nums[k];
             if(sum==-nums[i]){
-                list.add(Arrays.asList(nums[i],nums[j],nums[k]));
-                j++;
-                k--;
+                list.add(Arrays.asList(nums[i],nums[j++],nums[k--]));
             }else if(sum>-nums[i]){
                 k--;
             }else {
