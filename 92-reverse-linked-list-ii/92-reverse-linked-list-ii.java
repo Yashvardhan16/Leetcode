@@ -10,37 +10,26 @@
  */
 class Solution {
     public ListNode reverseBetween(ListNode head, int left, int right) {
-         if(head==null || head.next==null){
-      return head;
-    }
-
-    ListNode dummy = new ListNode(-1);
-    dummy.next = head;
-    // till the left index
-    ListNode it = dummy;
-    ListNode prevIt = null;
-    for(int i=0;i<left;i++){
-      prevIt = it;
-      it = it.next;
-    }
-//previt=1
-    //reverse
-    ListNode itR = it;
-    ListNode prevR = prevIt;
-    //itr=2,prevr =1
-    // reversing a linked list
-    for(int i=left;i<=right;i++){
-      ListNode forward = itR.next;
-      itR.next = prevR;
-      prevR = itR;
-      itR = forward;
-    }
-//prevR=4 ,itr=4
-    //connect
-    prevIt.next = prevR;
-    it.next = itR;
-//1-4 && 2-5
-    return dummy.next;
-
+        if(head==null||head.next==null) return head;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode it = dummy;
+        ListNode prev =null;
+        for(int i=0;i<left;i++){
+            prev = it;
+            it = it.next;
+        }
+        ListNode prevf = prev;
+        ListNode itr = it;
+        
+        for(int i=left;i<=right;i++){
+            ListNode forward = itr.next;
+            itr.next=prevf;
+            prevf = itr;
+            itr = forward;
+        }
+        prev.next = prevf;
+        it.next=itr;
+        return dummy.next;
     }
 }
