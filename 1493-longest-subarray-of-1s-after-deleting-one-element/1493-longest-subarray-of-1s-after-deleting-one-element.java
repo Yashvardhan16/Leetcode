@@ -11,8 +11,8 @@ class Solution {
                 }
                 left++;
             }
-            count = Math.max(count,right-left+1);
+            count = Math.max(count,right-left);
         }
-        return count-1;
+        return count;
     }
 }
