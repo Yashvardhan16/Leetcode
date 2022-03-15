@@ -4,14 +4,14 @@ class Solution {
         helper(candidates,0,new ArrayList<>(),target,list);
         return list;
     }
-   void helper(int[] candidates,int start,List<Integer> ans,int target,List<List<Integer>> list){
-         if(target<0) return;
-       if(target==0)  list.add(new ArrayList<>(ans));
-      
+    
+    void helper(int[] candidates,int start,List<Integer> res,int target,List<List<Integer>> list){
+        if(target<0) return;
+        if(target==0) list.add(new ArrayList<>(res));
         for(int i=start;i<candidates.length;i++){
-            ans.add(candidates[i]);
-            helper(candidates,i,ans,target-candidates[i],list);
-            ans.remove(ans.size()-1);
+            res.add(candidates[i]);
+            helper(candidates,i,res,target-candidates[i],list);
+            res.remove(res.size()-1);
         }
     }
 }
