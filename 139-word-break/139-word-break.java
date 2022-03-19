@@ -1,6 +1,7 @@
 class Solution {
     Map<String,Boolean> map = new HashMap<>();
     public boolean wordBreak(String s, List<String> wordDict) {
+         if (s == null || s.length() == 0) return false;
         if(wordDict.contains(s)) return true;
         if(map.containsKey(s)) return map.get(s);
         
