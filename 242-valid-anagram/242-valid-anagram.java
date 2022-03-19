@@ -11,6 +11,7 @@ class Solution {
         
         for(int i:chars){
             if(i!=0) return false;
+            System.out.println(i);
         }
         return true;
     }
