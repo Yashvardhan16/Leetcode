@@ -1,7 +1,7 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
         int n = intervals.length;
-        if(intervals==null||n==0) return intervals;
+        // if(intervals==null||n==0) return intervals;
         Arrays.sort(intervals , (a,b) -> Integer.compare(a[0],b[0]));
         LinkedList<int[]> list = new LinkedList<>();
         for(int[] curr : intervals){
