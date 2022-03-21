@@ -11,6 +11,7 @@ class Solution {
       
         for(int i=start;i<candidates.length;i++){
             if(i > start && candidates[i] == candidates[i-1]) continue;
+            if(target-candidates[i] < 0) break;
             ans.add(candidates[i]);
             helper(candidates,i+1,ans,target-candidates[i],list);
             ans.remove(ans.size()-1);
