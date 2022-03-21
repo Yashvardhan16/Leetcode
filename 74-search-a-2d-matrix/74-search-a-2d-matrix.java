@@ -3,20 +3,18 @@ class Solution {
         int n = matrix.length;
         int m = matrix[0].length;
         int lo =0;
-        int hi = m-1;
+        int hi = m -1;
         
         while(lo<n && hi>=0){
             if(matrix[lo][hi]==target){
                 return true;
-            }else if(matrix[lo][hi]<target){
-                lo++;
-               
-            }else{
-                 hi--;
             }
-            
+            if(matrix[lo][hi]<target){
+                lo++;
+            }else{
+                hi--;
+            }
         }
-       
         return false;
     }
 }
