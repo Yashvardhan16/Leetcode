@@ -8,8 +8,8 @@ class Solution {
             
             while(running_sum>=target){
                 ans = Math.min(ans,right-left+1);
-                running_sum -= nums[left];
-                left++;
+                running_sum -= nums[left++];
+                // left++;
             }
         }
         return ans!=Integer.MAX_VALUE ? ans: 0;
