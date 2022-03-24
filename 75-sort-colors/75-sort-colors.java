@@ -8,6 +8,7 @@ class Solution {
                 nums[index] = nums[x];
                 nums[x]=0;
                 x++;
+                
             } if(nums[index]==2){
                 nums[index] = nums[y];
                 nums[y] = 2;
