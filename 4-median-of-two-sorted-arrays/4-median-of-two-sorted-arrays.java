@@ -25,7 +25,7 @@ class Solution {
         if(ans.length%2==1){
             median = ans[mid];
         }else{
-            median = (ans[mid]+ans[mid-1])/2.0;
+            median = (ans[mid] + ans[mid-1])/2.0;
         }
         return median;
     }
