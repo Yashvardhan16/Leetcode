@@ -65,21 +65,26 @@ class Solution{
     //Function to rotate a linked list.
     public Node rotate(Node head, int k) {
         // add code here
-        if(head==null||head.next==null||k==0) return head;
-        int length=1;
-        Node curr = head;
-        while(curr.next!=null){
-            length++;
-            curr = curr.next;
+        int length =0;
+        Node dummy = head;
+        Node tail2 = head;
+        Node tail = head;
+        while(tail2.next!=null){
+            tail2 = tail2.next;
         }
-         curr.next = head;
-        k = k%length;
-        length = length-k;
-        while(k-->0){
-            curr = curr.next;
+        // while(fast.next!=null){
+        //     length++;
+        //     slow = slow.next;
+        // }
+        // Node prev = slow;
+        // k = k%length;
+        while(k -->0){
+           dummy = head.next;
+           head.next=null;
+           tail2.next = head;
+            head = dummy;
+            tail2 = tail2.next;
         }
-        head = curr.next;
-        curr.next=null;
         return head;
     }
 }
