@@ -2,17 +2,16 @@ class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         int n = matrix.length;
         int m = matrix[0].length;
-        int lo =0;
-        int hi = m -1;
-        
-        while(lo<n && hi>=0){
-            if(matrix[lo][hi]==target){
-                return true;
+        int left = 0;
+        int right = m-1;
+        while(left<n&&right>=0){
+            if(matrix[left][right]==target) return true;
+            
+            else if(matrix[left][right]<target){
+                left++;
             }
-            if(matrix[lo][hi]<target){
-                lo++;
-            }else{
-                hi--;
+            else if(matrix[left][right]>target){
+                right--;
             }
         }
         return false;
