@@ -42,7 +42,7 @@ class Solution {
             max=Math.max(arr[n-1]-k, arr[i-1]+k);
             min=Math.min(arr[i]-k, arr[0]+k);
             if (min<0) continue;
-            ans = Math.min(ans,max -min);
+            ans =Math.min(ans,max-min);
         } 
         return ans;
     }
