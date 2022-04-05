@@ -57,12 +57,12 @@ class Solution
                 count++;
                 i++;
             }else{
-                platforms = Math.max(platforms,count);
                 count--;
                 j++;
             }
+            platforms = Math.max(platforms,count);
         }
-        platforms = Math.max(platforms,count);
+        
         return platforms;
     }
     
