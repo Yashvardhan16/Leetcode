@@ -45,9 +45,8 @@ class Solution{
             sum+=arr[i];
             if(map.containsKey(sum)){
                 count += map.get(sum);
-                map.put(sum,map.get(sum)+1l);
-            }else
-            map.put(sum,1l);
+            }
+            map.put(sum,map.getOrDefault(sum,0l)+1l);
         }
         return count;
     }
