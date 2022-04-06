@@ -15,5 +15,5 @@ return Math.max(help(nums,0,nums.length-1),help(nums,1,nums.length));
         }
         return max;
      }   
-        
+       
     }
