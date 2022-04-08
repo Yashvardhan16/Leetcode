@@ -56,15 +56,32 @@ class Solution{
     public static void rearrange(long arr[], int n){
         
         // Your code here
-       List<Long> list = new ArrayList<>();
-       for(int i=0;i<n;i++){
-           list.add(arr[n-i-1]);
-           list.add(arr[i]);
-       }
-       for(int i=0;i<n;i++){
-           arr[i] =list.get(i);
-       }
+    //   List<Long> list = new ArrayList<>();
+    //   for(int i=0;i<n;i++){
+    //       list.add(arr[n-i-1]);
+    //       list.add(arr[i]);
+    //   }
+    //   for(int i=0;i<n;i++){
+    //       arr[i] =list.get(i);
+    //   }
+    long[] ans = new long[n];
+    int i=0;
+    int j = n-1;
+    int k=0;
+    while(i<=j){
+        ans[k] = arr[j];
+        k++;
+        j--;
         
+        if(i<j){
+            ans[k] = arr[i];
+            k++;
+            i++;
+        }
+    }
+        for(int z=0;z<n;z++){
+            arr[z] = ans[z];
+        }
         
     }
     
