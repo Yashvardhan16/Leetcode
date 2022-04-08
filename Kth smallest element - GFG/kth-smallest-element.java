@@ -36,7 +36,7 @@ class Solution{
     public static int kthSmallest(int[] arr, int l, int r, int k) 
     { 
         //Your code here
-        Arrays.sort(arr);
+        // Arrays.sort(arr);
         PriorityQueue<Integer> maxheap = new PriorityQueue<Integer>();
         for(int i=0;i<arr.length;i++){
             maxheap.add(arr[i]);
