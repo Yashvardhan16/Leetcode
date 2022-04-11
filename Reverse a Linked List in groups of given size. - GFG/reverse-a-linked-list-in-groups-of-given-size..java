@@ -77,7 +77,7 @@ class Solution
     public static Node reverse(Node node, int k)
     {
         //Your code here
-        if(node==null || node.next==null||k<=1) return node;
+        if(node==null||node.next==null||k==0) return node;
         Node curr = node;
         Node next = null;
         Node prev = null;
