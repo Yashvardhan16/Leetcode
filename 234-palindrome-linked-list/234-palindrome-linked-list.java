@@ -17,9 +17,9 @@ class Solution {
             copy = copy.next;
              } 
             while(!st.isEmpty()){
-                if(st.pop()!=head.val){
+                if(st.pop()!=head.val)
                 return false;
-            }
+            
             head = head.next;
     }
         return true;
