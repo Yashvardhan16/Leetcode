@@ -1,6 +1,7 @@
 class Solution {
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-        List<List<Integer>> list = new ArrayList<>();
+         List<List<Integer>> list = new ArrayList<>();
+         if(graph.length==0) return list;
         List<Integer> ans = new ArrayList();
         ans.add(0);
         dfs(graph,0,ans,list);
