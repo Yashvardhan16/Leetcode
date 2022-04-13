@@ -3,19 +3,19 @@ class Solution {
         int n = nums.length;
         int lo =0;
         int hi = n-1;
-        
-        while(lo<=hi){
-            int mid = lo+(hi-lo)/2;
-             if(nums[mid]<target){
+        if(target>nums[hi]) return n;
+        while(lo<hi){
+            int mid= (hi-lo)/2+ lo;
+            if(nums[mid]==target) {return mid;}
+                                   
+            
+            if(nums[mid]<target){
                 lo=mid+1;
-             }
-          else if(nums[mid]>target){
-                hi = mid-1;
             }
-            else{
-                return mid;
+            if(nums[mid]>target){
+                hi=mid;
             }
         }
-        return hi+1;
+        return lo;
     }
 }
