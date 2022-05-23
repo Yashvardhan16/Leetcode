@@ -15,14 +15,14 @@
  */
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        helper(root,list,0);
-        return list;
+        List<Integer> result = new ArrayList<>();
+        helper(root,result,0);
+        return result;
     }
-    void helper(TreeNode root , List<Integer> res,int depth){
+    void helper(TreeNode root, List<Integer> res,int depth){
         if(root==null) return;
         if(depth==res.size()){
-        res.add(root.val);
+            res.add(root.val);
         }
         helper(root.right,res,depth+1);
         helper(root.left,res,depth+1);
