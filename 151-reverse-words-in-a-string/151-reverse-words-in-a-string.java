@@ -1,16 +1,15 @@
 class Solution {
     public String reverseWords(String s) {
         Stack<String> st = new Stack<>();
-        for(String s1 : s.split(" ")){
-            if(!s1.isEmpty())
-            st.push(s1);
+        for(String a:s.trim().split(" ")){
+            if(!a.isEmpty())
+            st.push(a);
         }
         StringBuilder sb = new StringBuilder();
-        
-            while(!st.isEmpty()){
-                sb.append(st.pop());
-                sb.append(" ");
-            }
+        while(!st.isEmpty()){
+            sb.append(st.pop());
+            sb.append(" ");
+        }
         return sb.toString().trim();
     }
 }
