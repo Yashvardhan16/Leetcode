@@ -1,7 +1,7 @@
 class Solution {
     public String reverseWords(String s) {
         Stack<String> st = new Stack<>();
-        for(String a:s.trim().split(" ")){
+        for(String a:s.split(" ")){
             if(!a.isEmpty())
             st.push(a);
         }
