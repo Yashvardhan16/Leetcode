@@ -9,15 +9,10 @@ class Solution {
             int k = n-1;
             while(j<k){
                 int currsum = nums[i]+nums[j]+nums[k];
-                if(currsum>target){ 
-                while(j<k && nums[k] == nums[k-1]){
-                        k--;
-                    }
-                       k--;           }
-                else  { while(j<k && nums[j+1] == nums[j]){
-                        j++;
-                    } j++;
-                      }
+                if(currsum>target)
+                       k--;           
+                else j++;
+                      
                 if(Math.abs(sum-target)>Math.abs(currsum-target)){
                     sum=currsum;
                 }
