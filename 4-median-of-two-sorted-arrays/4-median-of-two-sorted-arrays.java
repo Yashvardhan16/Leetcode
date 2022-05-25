@@ -20,14 +20,12 @@ class Solution {
             ans[k] = nums2[j];
             j++;k++;
         }
-        double median = 0;
         int mid = ans.length/2;
         if(ans.length%2==1){
-            median =  ans[mid];
+            return ans[mid];
         }
         else{
-            median =  (ans[mid] + ans[mid-1])/2.0;
+           return (ans[mid] + ans[mid-1])/2.0;
         }
-        return median;
     }
 }
