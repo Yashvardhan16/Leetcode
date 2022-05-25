@@ -9,8 +9,7 @@ class Solution {
             int k = n-1;
             while(j<k){
                 int currsum = nums[i]+nums[j]+nums[k];
-                if(currsum>target)
-                       k--;           
+                if(currsum>target) k--;           
                 else j++;
                       
                 if(Math.abs(sum-target)>Math.abs(currsum-target)){
