@@ -10,7 +10,6 @@ class Solution {
         if(res.size()==nums.length){
             list.add(new ArrayList<>(res));
         }
-        else{
         for(int i=0;i<nums.length;i++){
          if(used[i]||i>0 && nums[i]==nums[i-1] &&!used[i-1]) continue;
             used[i] = true;
@@ -18,7 +17,7 @@ class Solution {
             backtrack(list,res,nums,used);
             used[i] = false;
             res.remove(res.size()-1);
-        }
+        
         }
     }
 }
