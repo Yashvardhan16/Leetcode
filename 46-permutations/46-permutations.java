@@ -7,7 +7,6 @@ class Solution {
  void backtrack(List<List<Integer>> list,List<Integer> res,int[] nums){
         if(res.size()==nums.length){
             list.add(new ArrayList<>(res));
-            return;
         }
      for(int i=0;i<nums.length;i++){
          if(res.contains(nums[i])) continue;
