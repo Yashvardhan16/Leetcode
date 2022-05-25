@@ -1,8 +1,5 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-      int n = nums.length;
-        int lo=0;
-        int hi = n-1;
         int[] ans = new int[2];
         ans[0] = start(nums,target);
         ans[1] = end(nums,target);
