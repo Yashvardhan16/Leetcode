@@ -3,7 +3,7 @@ class Solution {
         int steps =0;
         for(int i=0;i<=steps;i++){
             steps = Math.max(steps,nums[i]+i);
-            if(steps>=nums.length-1){
+            if(steps >=nums.length-1){
                 return true;
             }
         }
