@@ -21,6 +21,6 @@ class Solution {
                 list.add(current_interval);
             }
         }
-        return list.toArray(new int[0][]);
+        return list.toArray(new int[list.size()][]);
     }
 }
