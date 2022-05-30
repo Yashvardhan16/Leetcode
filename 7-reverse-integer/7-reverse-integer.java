@@ -5,7 +5,7 @@ class Solution {
             ans = ans*10 + x%10;
             x/=10;
         }
-        if(ans<=Integer.MAX_VALUE && ans>=Integer.MIN_VALUE){
+        while(ans<=Integer.MAX_VALUE && ans>=Integer.MIN_VALUE){
         return (int)ans;
         }
         return 0;
