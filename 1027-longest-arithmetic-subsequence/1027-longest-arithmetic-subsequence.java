@@ -1,5 +1,6 @@
 class Solution {
     public int longestArithSeqLength(int[] A) {
+        if(A.length<=1) return A.length;
 int res = 2, n = A.length;
         HashMap<Integer, Integer>[] dp = new HashMap[n];
         for (int j = 0; j < A.length; j++) {
@@ -10,6 +11,5 @@ int res = 2, n = A.length;
                 res = Math.max(res, dp[j].get(d));
             }
         }
-        System.out.println(dp[n-1]);
         return res;
     }    }
